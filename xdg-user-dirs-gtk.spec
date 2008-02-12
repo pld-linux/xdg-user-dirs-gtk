@@ -1,11 +1,11 @@
 Summary:	GNOME/GTK+ integration of special directories
 Name:		xdg-user-dirs-gtk
-Version:	0.6
+Version:	0.7
 Release:	1
 License:	GPL v2
-Group:		Libraries
-Source0:	http://ftp.gnome.org/pub/gnome/sources/xdg-user-dirs-gtk/0.6/%{name}-%{version}.tar.bz2
-# Source0-md5:	fdc72260fc53c3ce5c49f205a0b627e8
+Group:		X11/Applications
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/xdg-user-dirs-gtk/0.7/%{name}-%{version}.tar.bz2
+# Source0-md5:	dcd034be77af257fa3d89178f12598a4
 BuildRequires:	autoconf
 BuildRequires:	automake
 BuildRequires:	gtk+2-devel
