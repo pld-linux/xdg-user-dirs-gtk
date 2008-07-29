@@ -1,4 +1,5 @@
 Summary:	GNOME/GTK+ integration of special directories
+Summary(pl.UTF-8):	Integracja specjalnych katalogów z GNOME/GTK+
 Name:		xdg-user-dirs-gtk
 Version:	0.7
 Release:	1
@@ -8,7 +9,7 @@ Source0:	http://ftp.gnome.org/pub/GNOME/sources/xdg-user-dirs-gtk/0.7/%{name}-%{
 # Source0-md5:	dcd034be77af257fa3d89178f12598a4
 BuildRequires:	autoconf
 BuildRequires:	automake
-BuildRequires:	gtk+2-devel
+BuildRequires:	gtk+2-devel >= 1:2.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig
 BuildRequires:	xdg-user-dirs
@@ -22,8 +23,18 @@ into the GNOME desktop and GTK+ applications.
 It gets run during login and does two things:
 * Tracks changes of locale and prompts the user so the directories
   can be changed.
-* Creates a default gtk bookmarks file if there is none, based
+* Creates a default GTK+ bookmarks file if there is none, based
   on a set of xdg user dirs.
+
+%description -l pl.UTF-8
+xdg-user-dirs-gtk to pakiet towarzyszący xdg-user-dirs, integrujący
+go ze środowiskiem GNOME i aplikacjami GTK+.
+
+Jest uruchamiany podczas logowania i wykonuje dwie czynności:
+- śledzi zmiany lokalizacji i proponuje użytkownikowi zmianę
+  katalogów
+- tworzy domyślny plik zakładek GTK+ (jeśli go nie ma) w oparciu o
+  zestaw katalogów użytkownika xdg.
 
 %prep
 %setup -q
