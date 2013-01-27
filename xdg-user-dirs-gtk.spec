@@ -1,15 +1,15 @@
 Summary:	GNOME/GTK+ integration of special directories
 Summary(pl.UTF-8):	Integracja specjalnych katalogów z GNOME/GTK+
 Name:		xdg-user-dirs-gtk
-Version:	0.9
+Version:	0.10
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	http://ftp.gnome.org/pub/GNOME/sources/xdg-user-dirs-gtk/0.9/%{name}-%{version}.tar.xz
-# Source0-md5:	345227186331147fafffbe09d8b0082b
-BuildRequires:	autoconf
-BuildRequires:	automake
-BuildRequires:	gtk+3-devel
+Source0:	http://ftp.gnome.org/pub/GNOME/sources/xdg-user-dirs-gtk/0.10/%{name}-%{version}.tar.xz
+# Source0-md5:	c4469eeeb0416d734a4592f8030d1bcf
+BuildRequires:	autoconf >= 2.53
+BuildRequires:	automake >= 1:1.9
+BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	intltool >= 0.35.0
 BuildRequires:	pkgconfig
 BuildRequires:	tar >= 1:1.22
@@ -46,6 +46,7 @@ Jest uruchamiany podczas logowania i wykonuje dwie czynności:
 %{__intltoolize}
 %{__aclocal}
 %{__autoconf}
+%{__autoheader}
 %{__automake}
 %configure
 %{__make}
