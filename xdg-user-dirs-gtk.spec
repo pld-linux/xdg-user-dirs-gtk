@@ -1,19 +1,20 @@
 Summary:	GNOME/GTK+ integration of special directories
 Summary(pl.UTF-8):	Integracja specjalnych katalogów z GNOME/GTK+
 Name:		xdg-user-dirs-gtk
-Version:	0.11
+Version:	0.13
 Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/xdg-user-dirs-gtk/0.11/%{name}-%{version}.tar.xz
-# Source0-md5:	e30bf46fca8b7467643fb1998841873a
+Source0:	https://download.gnome.org/sources/xdg-user-dirs-gtk/0.13/%{name}-%{version}.tar.xz
+# Source0-md5:	7ed574239197662226eeb5980ba9ec94
 Patch0:		mate-support.patch
 URL:		https://gitlab.gnome.org/GNOME/xdg-user-dirs-gtk
-BuildRequires:	autoconf >= 2.53
-BuildRequires:	automake >= 1:1.9
+BuildRequires:	gettext-tools
 BuildRequires:	gtk+3-devel >= 3.0
-BuildRequires:	intltool >= 0.35.0
+BuildRequires:	meson >= 0.50.0
+BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
+BuildRequires:	rpmbuild(macros) >= 1.736
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xdg-user-dirs
 BuildRequires:	xz
@@ -41,23 +42,17 @@ Jest uruchamiany podczas logowania i wykonuje dwie czynności:
 
 %prep
 %setup -q
-%patch0 -p1
+%patch -P0 -p1
 
 %build
-%{__glib_gettextize}
-%{__intltoolize}
-%{__aclocal}
-%{__autoconf}
-%{__autoheader}
-%{__automake}
-%configure
-%{__make}
+%meson build
+
+%ninja_build -C build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%{__make} install \
-	DESTDIR=$RPM_BUILD_ROOT
+%ninja_install -C build
 
 %find_lang %{name}
 
@@ -68,4 +63,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc AUTHORS ChangeLog NEWS README
 %attr(755,root,root) %{_bindir}/xdg-user-dirs-gtk-update
+%{_desktopdir}/user-dirs-update-gtk.desktop
 %{_sysconfdir}/xdg/autostart/user-dirs-update-gtk.desktop

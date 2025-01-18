@@ -1,11 +1,11 @@
---- xdg-user-dirs-gtk-0.10/user-dirs-update-gtk.desktop.in~	2013-01-21 15:18:32.000000000 +0200
-+++ xdg-user-dirs-gtk-0.10/user-dirs-update-gtk.desktop.in	2013-02-23 15:29:11.580080585 +0200
-@@ -4,7 +4,7 @@
+--- xdg-user-dirs-gtk-0.13/user-dirs-update-gtk.desktop.in.orig	2025-01-18 21:30:34.658735416 +0100
++++ xdg-user-dirs-gtk-0.13/user-dirs-update-gtk.desktop.in	2025-01-18 21:32:02.001595572 +0100
+@@ -4,7 +4,7 @@ Exec=xdg-user-dirs-gtk-update
  _Name=User folders update
  _Comment=Update common folders names to match current locale
  Terminal=false
 -OnlyShowIn=GNOME;LXDE;Unity;
 +OnlyShowIn=GNOME;LXDE;Unity;MATE;
+ NoDisplay=true
  Type=Application
  StartupNotify=false
- X-KDE-autostart-after=panel
