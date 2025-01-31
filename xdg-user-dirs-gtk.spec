@@ -2,7 +2,7 @@ Summary:	GNOME/GTK+ integration of special directories
 Summary(pl.UTF-8):	Integracja specjalnych katalogów z GNOME/GTK+
 Name:		xdg-user-dirs-gtk
 Version:	0.13
-Release:	2
+Release:	3
 License:	GPL v2
 Group:		X11/Applications
 Source0:	https://download.gnome.org/sources/xdg-user-dirs-gtk/0.13/%{name}-%{version}.tar.xz
@@ -53,6 +53,8 @@ Jest uruchamiany podczas logowania i wykonuje dwie czynności:
 rm -rf $RPM_BUILD_ROOT
 
 %ninja_install -C build
+
+%{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 
 %find_lang %{name}
 
