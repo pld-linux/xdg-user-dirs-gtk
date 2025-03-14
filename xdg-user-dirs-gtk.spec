@@ -1,12 +1,12 @@
 Summary:	GNOME/GTK+ integration of special directories
 Summary(pl.UTF-8):	Integracja specjalnych katalogów z GNOME/GTK+
 Name:		xdg-user-dirs-gtk
-Version:	0.13
-Release:	3
+Version:	0.14
+Release:	1
 License:	GPL v2
 Group:		X11/Applications
-Source0:	https://download.gnome.org/sources/xdg-user-dirs-gtk/0.13/%{name}-%{version}.tar.xz
-# Source0-md5:	7ed574239197662226eeb5980ba9ec94
+Source0:	https://download.gnome.org/sources/xdg-user-dirs-gtk/0.14/%{name}-%{version}.tar.xz
+# Source0-md5:	07f4e10cf5aee8cdb303da5ded5ddc19
 Patch0:		mate-support.patch
 URL:		https://gitlab.gnome.org/GNOME/xdg-user-dirs-gtk
 BuildRequires:	gettext-tools
@@ -14,7 +14,7 @@ BuildRequires:	gtk+3-devel >= 3.0
 BuildRequires:	meson >= 0.50.0
 BuildRequires:	ninja >= 1.5
 BuildRequires:	pkgconfig
-BuildRequires:	rpmbuild(macros) >= 1.736
+BuildRequires:	rpmbuild(macros) >= 2.042
 BuildRequires:	tar >= 1:1.22
 BuildRequires:	xdg-user-dirs
 BuildRequires:	xz
@@ -45,14 +45,14 @@ Jest uruchamiany podczas logowania i wykonuje dwie czynności:
 %patch -P0 -p1
 
 %build
-%meson build
+%meson
 
-%ninja_build -C build
+%meson_build
 
 %install
 rm -rf $RPM_BUILD_ROOT
 
-%ninja_install -C build
+%meson_install
 
 %{__rm} -r $RPM_BUILD_ROOT%{_localedir}/ie
 

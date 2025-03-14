@@ -1,8 +1,8 @@
---- xdg-user-dirs-gtk-0.13/user-dirs-update-gtk.desktop.in.orig	2025-01-18 21:30:34.658735416 +0100
-+++ xdg-user-dirs-gtk-0.13/user-dirs-update-gtk.desktop.in	2025-01-18 21:32:02.001595572 +0100
+--- xdg-user-dirs-gtk-0.14/user-dirs-update-gtk.desktop.in.orig	2025-01-18 21:38:12.000000000 +0100
++++ xdg-user-dirs-gtk-0.14/user-dirs-update-gtk.desktop.in	2025-03-14 17:19:00.449617616 +0100
 @@ -4,7 +4,7 @@ Exec=xdg-user-dirs-gtk-update
- _Name=User folders update
- _Comment=Update common folders names to match current locale
+ Name=User folders update
+ Comment=Update common folders names to match current locale
  Terminal=false
 -OnlyShowIn=GNOME;LXDE;Unity;
 +OnlyShowIn=GNOME;LXDE;Unity;MATE;
